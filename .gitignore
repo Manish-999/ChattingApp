@@ -2,7 +2,6 @@
 
 # compiled output
 nodeFiles/modals/db.js
-/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
