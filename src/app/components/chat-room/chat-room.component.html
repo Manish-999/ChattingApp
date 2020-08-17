@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="sticky-top" style="z-index: -1;">
+                <h3 style="text-align: center;">Online users</h3>
+                <hr>
+                <div class='handleScroll' id="scrollBottom" style="width:100%">
+
+                    <ul class="list-group">
+                        <li *ngFor="let name of names" class="list-group-item list-group-item-secondary mt-1">{{name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+
+
+            <table style="width:100%">
+                <tr>
+                    <td class='fixed-top'>
+                        <div class="mb-5" style="z-index: -1;">
+                            <h3 style="text-align: center;"> Chatting Room {{room}}</h3>
+                            <hr>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <div class='handleScroll' id="scrollBottom"
+                            style="margin-top: 50px;margin-bottom: 0px;width:100%">
+
+                            <ul>
+                                <li class="list-group-item list-group-item-action list-group-item-warning mt-1"
+                                    *ngFor="let data of chatting"><strong class="text-danger">{{data.from}}     ></strong>  <strong class="text-primary"> {{data.text}}</strong>   {{data.time}}</li>
+                            </ul>
+                            <!-- <p *ngFor="let data of chatting" >{{data.time}}{{data.from}}{{data.text}}</p> -->
+                        </div>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>
+                        <div class="input-group mb-1">
+                            <input type="text" id="myInput" class="form-control" value="" placeholder="Enter some data"
+                                #msg style="width: 688px;" [(ngModel)]="inpo">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" id="myBtn"
+                                    (click)="sendMessage(msg.value)">Enter to
+                                    Send</button>
+                            </div>
+
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
